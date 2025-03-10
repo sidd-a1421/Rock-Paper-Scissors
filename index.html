@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock-Paper-Scissors</title>
+  <style>
+    body {
+      background-color: rgb(25, 25, 25);
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    button {
+      margin-bottom: 45px;
+    }
+
+    .emoji button {
+      border: 3px solid white;
+      background-color: transparent;
+      border-radius: 50%;
+      height: 120px;
+      width: 120px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    img {
+      height: 50px;
+    }
+
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .resetBttn {
+      font-size: 15px;
+      padding: 8px 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <p class="title">Rock Paper Scissors</p>
+  <div class="container">
+    <div class="emoji">
+      <button onclick="playGame('rock');">
+        <img src="icons/rock-emoji.png" alt="rock-emoji" />
+      </button>
+      <button onclick="playGame('paper');">
+        <img src="icons/paper-emoji.png" alt="paper-emoji" />
+      </button>
+      <button onclick="playGame('scissors');">
+        <img src="icons/scissors-emoji.png" alt="scissors-emoji" />
+      </button>
+    </div>
+    <p class="js-result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score"></p>
+    <button onclick="
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        resetScore();
+        localStorage.removeItem('score');
+        
+        " class="resetBttn">
+      Reset Score
+    </button>
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>
