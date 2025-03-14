@@ -24,7 +24,6 @@ function pickComputerMove() {
 }
 
 
-
 function playGame(playerMove) {
     const computerMove = pickComputerMove();
     console.log(computerMove);
@@ -62,4 +61,24 @@ function resetScore() {
 
     document.querySelector(".js-result").innerHTML = "";
     document.querySelector(".js-moves").innerHTML = "";
+}
+
+let autoPlaying = false;
+let intervalId;
+
+function autoPlay() {
+    if (!autoPlaying) {
+        const move = pickComputerMove();
+        intervalId = setInterval(() => {
+            playGame(move);
+        }, 1000);
+        document.querySelector('.autoplayBttn').innerText = 'Stop Play';
+        autoPlaying = true;
+    }
+
+    else {
+        clearInterval(intervalId);
+        autoPlaying = false;
+        document.querySelector('.autoplayBttn').innerText = 'Auto Play';
+    }
 }
