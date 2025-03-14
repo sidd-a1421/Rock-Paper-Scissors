@@ -23,28 +23,7 @@ function pickComputerMove() {
     return computerMove;
 }
 
-function imgSelector(playerMove, pickComputerMove) {
-    const container = document.querySelector(".image-container");
-    const playerMoveImg = document.createElement("img");
-    const computerMoveImg = document.createElement("img");
 
-    if (playerMove === "rock") {
-        playerMoveImg.src = "icons/rock-emoji.png";
-    } else if (playerMove === "paper") {
-        playerMoveImg.src = "icons/paper-emoji.png";
-    } else if (playerMove === "scissors") {
-        playerMoveImg.src = "icons/scissors-emoji.png";
-    }
-    if (computerMove === "rock") {
-        computerMoveImg.src = "icons/rock-emoji.png";
-    } else if (computerMove === "paper") {
-        computerMoveImg.src = "icons/paper-emoji.png";
-    } else if (computerMove === "scissors") {
-        computerMoveImg.src = "icons/scissors-emoji.png";
-    }
-    container.appendChild(playerMoveImg);
-    container.appendChild(computerMoveImg);
-}
 
 function playGame(playerMove) {
     const computerMove = pickComputerMove();
